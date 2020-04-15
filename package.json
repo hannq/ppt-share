@@ -1,0 +1,17 @@
+{
+  "name": "nodeppt-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nodeppt.config.js",
+  "scripts": {
+    "dev": "nodeppt serve slide.md",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodeppt": "^2.2.0",
+    "typescript": "^3.8.3"
+  }
+}
