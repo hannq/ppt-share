@@ -41,7 +41,7 @@ cover: ./images/cover.png
 3. 显式地定义所有的类型似乎能应付大部分常见，但遇到有些复杂的情况却发现无能为力，只能含恨写下若干的 `as any` 默默等待代码 `review` 时的公开处刑。
 4. 项目急时间紧却发现 `Typescript` 成了首要难题，思索片刻决定投靠的 `Anyscript`，快速开发业务逻辑，待到春暖花开时再回来补充类型。双倍的工作量，双倍的快乐只有自己才懂。
 
-为了避免以上悲剧的发生或者重演，同学，只有在对它有更加深刻的理解之后，才能在开发时游刃有余、在撸码时纵横捭阖。
+为了避免以上悲剧的发生或者重演，我们只有在对它有更加深刻的理解之后，才能在开发时游刃有余、在撸码时纵横捭阖。
 
 ## Typescript 类型系统简述
 
@@ -120,7 +120,7 @@ cover: ./images/cover.png
 
 <h6>以下内容摘自官方 WIKI：</h6>
 
-> In TypeScript 2.2 and later, developers can enable *language service plugins* to **augment the TypeScript code editing experience**. 
+> In TypeScript 2.2 and later, developers can enable *language service plugins* to **augment the TypeScript code editing experience**.
 
 其实官方文档已经写的很清楚了，这玩意儿旨在优化 `Typescript` 代码的 **编写体验**。所以想利用这玩意儿改变编译结果或是想自创新语法的还是省省吧<font color="#999"> ~~嗯，我在说我自己呢~~</font>！
 
@@ -159,7 +159,7 @@ npm install --save-dev your_plugin_name
 ```json
 {
   "compilerOptions": {
-    // compilerOptions Configuration ... 
+    // compilerOptions Configuration ...
     "noImplicitAny": true,
     "plugins": [
       {
@@ -175,7 +175,7 @@ npm install --save-dev your_plugin_name
 
 <h5>几个需要注意的地方:</h5>
 
-1. 如果使用 `VSCode` 开发，记得务必 [using-the-workspace-version-of-typescript](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-the-workspace-version-of-typescript)，否则可能导致插件不生效。
+1. 如果使用 `VSCode` 开发，记得务必 [using the workspace version of typescript](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-the-workspace-version-of-typescript)，否则可能导致插件不生效。
 2. `Typescript Service Plugins` 产生的告警或者报错不会影响编译结果。
 3. 如果配置完了不生效可以先尝试重启你的编辑器。
 
@@ -183,7 +183,7 @@ npm install --save-dev your_plugin_name
 
 > 具体使用细节请用编辑器打开我提供的 demo，自行体验。
 
-#### [typescript-plugin-css-modules](https://www.npmjs.com/package/typescript-plugin-css-modules)
+#### 示例插件：[typescript-plugin-css-modules](https://www.npmjs.com/package/typescript-plugin-css-modules)
 
 <h5>插件安装</h5>
 
@@ -212,7 +212,7 @@ npm install --save-dev typescript-styled-plugin typescript
 
 类似实现思路的还有 [typings-for-css-modules-loader](https://www.npmjs.com/package/@teamsupercell/typings-for-css-modules-loader)，功能来说肯定是 `webpack loader` 更加强大，但是 `Typescript Plugin` 更加轻量、入侵度也越低，取舍与否，见仁见智吧
 
-#### [typescript-eslint-plugin](https://www.npmjs.com/package/typescript-eslint-plugin)
+#### 示例插件：[typescript-eslint-plugin](https://www.npmjs.com/package/typescript-eslint-plugin)
 
 <h5>插件安装</h5>
 
@@ -242,7 +242,7 @@ npm install --save-dev eslint typescript-eslint-plugin
 
 此插件可以让 `Typescript` 原生支持 `eslint` 检查及告警，编辑器不需要安装任何插件即可自持，但是报错并不影响编译结果。
 
-#### [typescript-styled-plugin](https://www.npmjs.com/package/typescript-styled-plugin)
+#### 示例插件：[typescript-styled-plugin](https://www.npmjs.com/package/typescript-styled-plugin)
 
 <h5>插件安装</h5>
 
