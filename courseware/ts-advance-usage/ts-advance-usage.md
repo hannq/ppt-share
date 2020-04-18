@@ -159,15 +159,15 @@ npm install --save-dev your_plugin_name
 ```json
 {
   "compilerOptions": {
-    // compilerOptions Configuration ...
+    /** compilerOptions Configuration ... */
     "noImplicitAny": true,
     "plugins": [
       {
-        // 配置插件名称，也可以填写本地路径
+        /** 配置插件名称，也可以填写本地路径 */
         "name": "sample-ts-plugin"
-        // 这里可以给插件传参 ...
+        /** 这里可以给插件传参 ... */
       }
-      // 支持同时引入多个插件 ...
+      /** 支持同时引入多个插件 ... */
     ]
   }
 }
@@ -193,13 +193,15 @@ npm install --save-dev typescript-styled-plugin typescript
 
 <h5>配置方法</h5>
 
+<h6>在 tsconfig.json 中增加配置</h6>
+
 ```json
 {
   "compilerOptions": {
     "plugins": [
       {
         "name": "typescript-styled-plugin"
-        // 具体配置参数请查看官方文档
+        /** 具体配置参数请查看官方文档 */
       }
     ]
   }
@@ -224,14 +226,16 @@ npm install --save-dev eslint typescript-eslint-plugin
 
 在 `.eslintrc.*` 文件中，添加对应的 `eslint` 配置
 
+<h6>在 tsconfig.json 中增加配置</h6>
+
 ```json
 {
   "compilerOptions": {
     "plugins": [
       {
         "name": "typescript-eslint-plugin"
-        // 默认会读取 `.eslintrc.*` 文件
-        // 具体配置参数请查看官方文档
+        /** 默认会读取 `.eslintrc.*` 文件 */
+        /** 具体配置参数请查看官方文档 */
       }
     ]
   }
@@ -252,13 +256,15 @@ npm install --save-dev typescript-styled-plugin typescript
 
 <h5>配置方法</h5>
 
+<h6>在 tsconfig.json 中增加配置</h6>
+
 ```json
 {
   "compilerOptions": {
     "plugins": [
       {
         "name": "typescript-styled-plugin"
-        // 具体配置参数请查看官方文档
+        /** 具体配置参数请查看官方文档 */
       }
     ]
   }
