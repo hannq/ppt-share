@@ -3,7 +3,7 @@
   "compilerOptions": {
     "rootDir": "./",
     "outDir": "./dist",
-    "plugins": [{ "name": "typescript-eslint-plugin" }]
+    "plugins": [{ "name": "typescript-eslint-language-service" }]
   },
   "include": [
     "./**/*"

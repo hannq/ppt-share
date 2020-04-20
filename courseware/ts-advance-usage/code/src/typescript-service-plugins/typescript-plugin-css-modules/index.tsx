@@ -2,7 +2,7 @@
  * @Author: hannq
  * @Date: 2020-04-18 15:11:14
  * @Last Modified by: hannq
- * @Last Modified time: 2020-04-18 19:33:22
+ * @Last Modified time: 2020-04-20 17:48:46
  * @desc 测试 typescript-plugin-css-modules 是否自动提示 class 名称
  */
 
