@@ -1,0 +1,18 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./dist",
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin",
+        "lint": {
+          "unknownProperties": "error",
+        }
+      }
+    ]
+  },
+  "include": [
+    "./**/*"
+  ]
+}

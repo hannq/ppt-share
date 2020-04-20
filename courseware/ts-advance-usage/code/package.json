@@ -1,0 +1,21 @@
+{
+  "name": "ts-advance-usage",
+  "version": "1.0.0",
+  "description": "ts-advance-usage code demo",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/styled-components": "^4.1.8",
+    "eslint": "^6.8.0",
+    "typescript": "^3.8.3",
+    "typescript-eslint-plugin": "^1.1.4",
+    "typescript-plugin-css-modules": "^2.2.0",
+    "typescript-styled-plugin": "^0.15.0"
+  },
+  "dependencies": {
+    "styled-components": "^5.1.0"
+  }
+}

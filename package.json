@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@typescript-eslint/parser": "^2.28.0",
     "nodeppt": "^2.2.0",
     "typescript": "^3.8.3"
   }
