@@ -147,7 +147,7 @@ type result2 = IsNumber<str>; // "no, not a number"
 
 #### 模拟真实数组
 
-看到这里肯定有同学就笑了，这还不简单，就举例来说，`typescript` 中最常见数据类型就是 `数组（Array）` 或者 `元组（tuple）`。
+看到这里肯定有同学就笑了，这还不简单，就举例来说，`Typescript` 中最常见数据类型就是 `数组（Array）` 或者 `元组（tuple）`。
 
 同学你说的很对，**那你知道如何对 `元组类型` 作 `push`、`pop`、`shift`、`unshift` 这些行为操作吗？**
 
@@ -379,17 +379,116 @@ combineTupleTypeWithTecursion(testData);
 
 ### 小结
 
-还记得一开始提出的思考题吗？其实通过上述的学习，我们完全可以自信地说出，`Typescript` 类型系统本身也是一套完备的编程语言，甚至可以说是完备的图灵编程语言，所以类型系统本身也是可以用来编程的，你完全可以用它来编写一些有趣的东西，更别说日常开发中遇到的简单的业务场景了。
+还记得一开始提出的思考题吗？其实通过上述的学习，我们完全可以自信地说出，`Typescript` 的 `Type` 本身也是一套完备的编程语言，甚至可以说是完备的图灵语言。因此类型本身也是可以用来编程的，你完全可以用它来编写一些有趣的东西，更别说是搞定日常开发中遇到的简单的业务场景了。
 
 ## "高级用法" 的使用场景与价值
 
 ### 哪些用法可以被称为 "高级用法"
 
+其实所谓 "高级用法"，不过是用来解决某些特定的场景而产生的特定的约定俗称的写法或者语法糖。那高级用法重要吗？重要，也不重要。怎理解呢，根据编程中的 "二八原则"，20%的知识储备已经可以解决80%的需求问题，但是这剩余的20%，就是入门与熟练的分水岭。
+
+其实只要当我们仔细翻阅一遍官方提供的 [handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)，就已经可以应付日常开发了。但是就像本文一开头说的那样，你是否觉得：
+
+1.  `Typescript` 在某些场景下用起来很费劲，远不及 `Javascript` 灵活度的十分之一。
+2. 你是否为自己使用 `Javascript` 中了某些 **骚操作** 用极简短的代码解决了某个复杂的代码而沾沾自喜，但却为不正确的 **返回类型** 挠秃了头。
+3. 你是否明知用了若干 `as xxx` 会让你的代码看起来很挫，但却无能为力，含恨而终。
+
+同学，当你使用某种办法解决了上述的这些问题，那么这种用法就可以被称作 "高级用法"。
+
 ### 举例说明 "高级用法" 的使用场景
 
-### 为什么需要这些 "高级用法"
+举个栗子：在 `Redux` 中有一个叫作 `combineReducers` 的函数，因为某些场景，我们需要增加一个 `combineReducersParamFactory` 的函数，该函数支持传入多个函数，传入函数的返回值为作为`combineReducers` 的入参，我们需要整合多个入参数函数的返回值，并生成最终的对象供 `combineReducers` 函数使用。
+
+思考一下逻辑，发现其实并不复杂，用 `Javascript` 可以很容易地实现出来：
+
+```javascript
+/**
+ * 合并多个参数的返回数值并返回
+ * @param { Function[] } reducerCreators
+ * @returns { Object }
+ */
+function combineReducersParamFactory(...reducerCreators) {
+  return reducerCreators.reduce((acc, creator) => ({ ...acc, ...creator() }), {})
+}
+
+// test ...
+
+function todosReducer(state = [], action) {
+  switch (action.type) {
+    case 'ADD_TODO':
+      return state.concat([action.text])
+    default:
+      return state
+  }
+}
+
+function counterReducer(state = 0, action) {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1
+    case 'DECREMENT':
+      return state - 1
+    default:
+      return state
+  }
+}
+
+const ret = combineReducersParamFactory(
+  () => ({ todosReducer }),
+  () => ({ counterReducer })
+);
+// { todosReducer: [Function: todosReducer], counterReducer: [Function: counterReducer] }
+```
+
+但如果用需要配备对应的类型，应该如何编写呢？
+
+```typescript
+type Combine<T> = (T extends any ? (args: T) => any : never) extends (args: infer A) => any ? A : never;
+
+/**
+ * 合并多个参数的返回数值并返回
+ * @param { Function[] } reducerCreators
+ * @returns { Object }
+ */
+function combineReducersParamFactory<T extends ((...args) => object)[]>(...reducerCreators: T): Combine<ReturnType<T[number]>> {
+  return reducerCreators.reduce<any>((acc, creator) => ({ ...acc, ...creator() }), {});
+}
+
+// test ...
+
+function todosReducer(state: object[], action: { [x: string]: string}) {
+  switch (action.type) {
+    case 'ADD_TODO':
+      return state.concat([action.text])
+    default:
+      return state
+  }
+}
+
+function counterReducer(state: number, action: { [x: string]: string}) {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1
+    case 'DECREMENT':
+      return state - 1
+    default:
+      return state
+  }
+}
+
+// 这里不需要显示传入类型，这里就可以得到正确的代码提示
+const ret = combineReducersParamFactory(
+  () => ({ todosReducer }),
+  () => ({ counterReducer })
+);
+// { todosReducer: [Function: todosReducer], counterReducer: [Function: counterReducer] }
+```
+
+你看，类型经过精心编排之后，就是可以让调用者不增加任何负担的前提下，享受到代码提示的快乐。
 
 ### 小结
+
+经过这一章节的学习，我们可以明确了解到，经过我们精心编排的类型，可以变得非常的智能，可以让调用者几乎零成本地享受到代码提示的快乐。或许在编排类型时所耗费的时间成本比较大，但是一旦我们编排完成，就可以极大地减少调用者的脑力负担，让调用者享受到编程的快乐。
 
 ## 类型推导与泛型操作符
 
@@ -536,13 +635,17 @@ npm install --save-dev typescript-styled-plugin typescript
 
 类似实现思路的还有 [typings-for-css-modules-loader](https://www.npmjs.com/package/@teamsupercell/typings-for-css-modules-loader)，功能来说肯定是 `webpack loader` 更加强大，但是 `Typescript Plugin` 更加轻量、入侵度也越低，取舍与否，见仁见智吧
 
-#### 示例插件：[typescript-eslint-plugin](https://www.npmjs.com/package/typescript-eslint-plugin)
+#### 示例插件：[typescript-eslint-language-service](https://www.npmjs.com/package/typescript-eslint-language-service)
 
 <h5>插件安装</h5>
 
+
+
 ```bash
-npm install --save-dev eslint typescript-eslint-plugin
+npm install --save-dev eslint typescript-eslint-language-service
 ```
+
+
 
 <h5>配置方法</h5>
 
@@ -550,12 +653,14 @@ npm install --save-dev eslint typescript-eslint-plugin
 
 <h6>在 tsconfig.json 中增加配置</h6>
 
+
+
 ```json
 {
   "compilerOptions": {
     "plugins": [
       {
-        "name": "typescript-eslint-plugin"
+        "name": "typescript-eslint-language-service"
         /** 默认会读取 `.eslintrc.*` 文件 */
         /** 具体配置参数请查看官方文档 */
       }
