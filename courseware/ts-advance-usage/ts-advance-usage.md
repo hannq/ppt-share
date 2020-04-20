@@ -22,9 +22,10 @@ cover: ./images/cover.png
 
 <h6> 此文档的内容默认要求读者已经具备以下知识：</h6>
 
-1. 了解 `Typescript` 使用场景及价值
-2. 了解 `Typescript` 基础语法以及常见的基础类型的使用
-3. 对 `Typescript` 的 `类型系统` 架构有一个最基础的了解
+1. 有 `Javascript` 或其他语言编程经验。
+2. 有 `Typescript` 实际使用经验，最好在正经项目中完整地使用过。
+3. 了解 `Typescript` 基础语法以及常见关键字地作用。
+4. 对 `Typescript` 的 `类型系统` 架构有一个最基本的了解。
 
 ### 相关资源推荐
 
@@ -492,7 +493,15 @@ const ret = combineReducersParamFactory(
 
 ## 类型推导与泛型操作符
 
-### 类型推导与代码哲学
+### 流动的类型（类型编写思路）
+
+熟悉 **函数式编程** 的同学一定对 **数据流动** 的概念有较为深刻的理解。当你在 "上游" 改变了一个值之后，"下游" 相关的会跟着自动更新。有 **响应式编程** 经验的同学这是时候应该迫不及待地想举手了，同学把手放下，这里我们并不想深入地讨论 **流式编程思想**，之所以引出这些概念，是想类比出本小节的重点: **流动的类型**。
+
+是的，编写类型系统的思路是可以借鉴 **函数式编程** 的思想的。因此某一个类型发生变化时，其他相关的类型也会自动更新，并且当代码的臃肿到不可维护的时候，你会得到一个友好的提示，整个类型系统就好像一个被精心设计过的约束系统。
+
+### 代码哲学
+
+聊完了类型系统
 
 ### 什么是泛型操作符
 
@@ -639,21 +648,15 @@ npm install --save-dev typescript-styled-plugin typescript
 
 <h5>插件安装</h5>
 
-
-
 ```bash
 npm install --save-dev eslint typescript-eslint-language-service
 ```
-
-
 
 <h5>配置方法</h5>
 
 在 `.eslintrc.*` 文件中，添加对应的 `eslint` 配置
 
 <h6>在 tsconfig.json 中增加配置</h6>
-
-
 
 ```json
 {
@@ -723,3 +726,4 @@ npm install --save-dev typescript-styled-plugin typescript
 以下引用自官方文档：
 
 > TypeScript Language Service Plugins ("plugins") are for changing the **editing experience only**. The core TypeScript language remains the same. Plugins can't add new language features such as new syntax or different typechecking behavior, and **plugins aren't loaded during normal commandline typechecking or emitting**.
+
