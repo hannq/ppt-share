@@ -632,13 +632,23 @@ function foo2(x: unknown) {
 
 ## 常见泛型操作符实现逻辑梳理与实践入门
 
+未完待续...
+
 ### 常见泛型操作符实现介绍与实现逻辑梳理
+
+未完待续...
 
 ### 手把手带你实现一个简单的泛型操作符案例
 
+未完待续...
+
 ### 常见的泛型操作符实现小技巧
 
+未完待续...
+
 ### 小结
+
+未完待续...
 
 ## 定制化扩展你的 Typescript
 
@@ -819,6 +829,8 @@ npm install --save-dev typescript-styled-plugin typescript
 
 ### 如何自己写一个 Typescript Service Plugins
 
+未完待续...
+
 ### 参考资料链接
 
 1. [Using the Compiler API](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API)
@@ -826,7 +838,9 @@ npm install --save-dev typescript-styled-plugin typescript
 3. [Writing a Language Service Plugin](https://github.com/microsoft/TypeScript/wiki/Writing-a-Language-Service-Plugin)
 4. [Useful Links for TypeScript Issue Management](https://github.com/microsoft/TypeScript/wiki/Useful-Links-for-TypeScript-Issue-Management)
 
-### 小结
+### 总结
+
+未完待续...
 
 ## Q&A
 

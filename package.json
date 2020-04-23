@@ -4,8 +4,8 @@
   "description": "",
   "main": "nodeppt.config.js",
   "scripts": {
-    "dev": "nodeppt serve ppt/ts-advance-usage.md",
-    "build": "nodeppt build ppt/ts-advance-usage.md",
+    "dev": "nodeppt serve ppt/ts-advance-usage/index.md",
+    "build": "nodeppt build ppt/ts-advance-usage/index.md",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
