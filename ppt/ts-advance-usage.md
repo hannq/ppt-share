@@ -5,11 +5,15 @@ plugins:
 
 <slide class="bg-black-blue aligncenter" image="https://source.unsplash.com/C1HhAQrbykQ/ .dark">
 
-# typescript-show {.text-landing.text-shadow}
+# 深入理解 Typescript 高级用法 {.text-landing.text-shadow}
 
-By hannq {.text-intro}
+:::div {.content-left}
 
-[:fa-github: Github](https://github.com/ksky521/nodeppt){.button.ghost}
+## title
+
+:::By hannq {.text-intro}
+
+<!-- [:fa-github: Github](https://github.com/ksky521/nodeppt){.button.ghost} -->
 
 <slide class="bg-black-blue aligncenter" image="https://source.unsplash.com/C1HhAQrbykQ/ .dark">
 

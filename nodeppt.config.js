@@ -1,9 +1,9 @@
-// @ts-check 
+// @ts-check
 
 /**
  * @file 默认配置
  */
-module.exports = () => ({
+module.exports = {
   // project deployment base
   baseUrl: '/',
 
@@ -62,12 +62,10 @@ module.exports = () => ({
   },
 
   devServer: {
-    /*
-  host: '0.0.0.0',
-  port: 8080,
-  https: false,
-  proxy: null, // string | Object
-  before: app => {}
-*/
+    // host: '0.0.0.0',
+    // port: 3001,
+    // https: false,
+    // proxy: null, // string | Object
+    // before: app => {}
   }
-});
+};
