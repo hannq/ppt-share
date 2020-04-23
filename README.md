@@ -8,3 +8,5 @@
 - [ ] 将分享用的课件发布到 `release`，方便下载
 
 ###### :eyeglasses: 一点微小的贡献
+
+- 图床地址 https://imgchr.com/page/tos
