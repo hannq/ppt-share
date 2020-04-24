@@ -8,7 +8,7 @@ module.exports = {
   baseUrl: '/',
 
   // where to output built files
-  outputDir: 'dist',
+  outputDir: 'docs',
 
   // where to put static assets (js/css/img/font/...)
   assetsDir: '',
