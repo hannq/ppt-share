@@ -109,7 +109,7 @@ speaker: 韩念琪
 
 ## Typescript 类型系统简述 {.text-landing}
 ---
-
+**思考题**：有⼈说 Typescript = Type + Javascript ，那么抛开 Javascript 不谈，这⾥的 Type 是⼀⻔完备的编程语⾔吗？
 <slide class="bg-white aligncenter">
 
 ## "高级用法" 的使用场景与价值 {.text-landing}
