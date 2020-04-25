@@ -6,11 +6,14 @@
 - :smile: 欢迎转载，转载请注明作者及出处。
 - :clap: 如果有任何意见或者建议，欢迎提 `issue`。
 
-## 目前已有的分享内容
+## 【填坑中...】目前已有的分享内容
 - :tada: 【持续更新中】深入理解 Typescript 高级用法
   + [正文内容](./courseware/ts-advance-usage/README.md)
   + [ppt演示文稿](https://hannq.github.io/ppt-share/index.html)
   + [源码及课件资源下载](https://github.com/hannq/ppt-share/releases)
+
+## 【挖坑】下期分享方向预告
+- [ ] 微前端
 
 ## TODO
 - [ ] 调整项目整体目录结构
