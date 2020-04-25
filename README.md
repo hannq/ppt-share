@@ -1,6 +1,17 @@
 # 用于技术分享的 ppt
 > :zap:powered by [nodeppt](https://github.com/ksky521/nodeppt)
 
+## 前言
+- :star: 如果对你有帮助的话，不妨加个 `star` 支持一下
+- :smile: 欢迎转载，转载请注明作者及出处。
+- :clap: 如果有任何意见或者建议，欢迎提 `issue`。
+
+## 目前已有的分享内容
+- :tada: 【持续更新中】深入理解 Typescript 高级用法
+  + [正文内容](./courseware/ts-advance-usage/README.md)
+  + [ppt演示文稿](https://hannq.github.io/ppt-share/index.html)
+  + [源码及课件资源下载](https://github.com/hannq/ppt-share/releases)
+
 ## TODO
 - [ ] 调整项目整体目录结构
 - [ ] 修改部分源代码以更好地支持 `Typescript`
