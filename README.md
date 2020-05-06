@@ -11,11 +11,13 @@
   + [正文内容](./courseware/ts-advance-usage/README.md)
   + [ppt演示文稿](https://hannq.github.io/ppt-share/index.html)
   + [源码及课件资源下载](https://github.com/hannq/ppt-share/releases)
-- :tada: 【持续更新中】在运行时读取 Typescript 类型与实战运用
+- :tada: 【已挖坑】在运行时读取 Typescript 类型与实战运用
   + [正文内容](./courseware/get-type-in-runtime/README.md)
 
 ## 【挖坑】下期分享方向预告
 - [ ] 微前端
+- [ ] rxjs
+- [ ] 函数式编程
 
 ## TODO
 - [ ] 调整项目整体目录结构
